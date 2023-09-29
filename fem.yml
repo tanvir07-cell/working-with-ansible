@@ -1,0 +1,22 @@
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: Update Cache
+      apt: 
+       update_cache: true
+      tags:
+      - node
+      - zsh
+  
+  vars:
+     target_user: ubuntu
+     new_shell: /bin/zsh  # Replace with the desired shell path
+  tasks:
+    - include: /home/ubuntu/fem-tasks/node.yml
+    - include: /home/ubuntu/fem-tasks/zsh.yml
+        
+    
+  
+   
+  
+  

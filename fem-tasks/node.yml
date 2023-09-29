@@ -1,0 +1,20 @@
+    
+
+    - name: Install nodejs and npm
+      apt:
+        name: ['nodejs','npm']
+      tags:
+        - node
+
+    - name: Install n
+      npm:
+        name: n   # n is the alternative on nvm package manager
+        global: true
+      tags:
+        - node
+    - name: n 18
+      shell: n 18
+      tags:
+        - node
+
+
